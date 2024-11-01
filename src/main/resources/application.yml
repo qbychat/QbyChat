@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: QbyChat
+  data:
+    mongodb:
+      uri: mongodb://localhost/qbychat
+app:
+  jwt-secret: 51970ecb9db04a9d9710602903cbaf2a
+  jwt-expiration: 6048000000
