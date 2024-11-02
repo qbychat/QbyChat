@@ -16,7 +16,6 @@ public class UserServiceImpl implements UserService {
     @Resource
     PasswordEncoder passwordEncoder;
 
-
     public User findOneUserByNameOrEmail(String usernameOrEmail) {
         return userRepository.findByUsername(usernameOrEmail).orElseGet(() -> userRepository.findByEmail(usernameOrEmail).orElse(null));
     }

@@ -1,6 +1,8 @@
 package org.cubewhy.qbychat.services.impl;
 
 import jakarta.annotation.Resource;
+import org.cubewhy.qbychat.entity.User;
+import org.cubewhy.qbychat.entity.UserDetailsImpl;
 import org.cubewhy.qbychat.services.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,6 +16,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userService.findOneUserByNameOrEmail(username);
+        User user = userService.findOneUserByNameOrEmail(username);
+        if (user == null) {
+            throw new UsernameNotFoundException(username);
+        }
+        return UserDetailsImpl.builder()
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .roles(user.getRoles())
+                .build();
     }
 }
