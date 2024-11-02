@@ -2,7 +2,6 @@ package org.cubewhy.qbychat.services.impl;
 
 import jakarta.annotation.Resource;
 import org.cubewhy.qbychat.entity.User;
-import org.cubewhy.qbychat.entity.UserDetailsImpl;
 import org.cubewhy.qbychat.services.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,7 +19,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }
-        return UserDetailsImpl.builder()
+        return User.builder()
                 .username(user.getUsername())
                 .password(user.getPassword())
                 .roles(user.getRoles())
