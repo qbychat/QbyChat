@@ -28,8 +28,10 @@ public class User implements UserDetails {
     private String password;
     private String email;
 
+    @Builder.Default
     private String nickname = username;
 
+    @Builder.Default
     private Date registerTime = new Date();
     private PrivacyPreference privacyPreference;
 
