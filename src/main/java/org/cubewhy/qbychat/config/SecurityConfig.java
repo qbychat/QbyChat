@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@ComponentScan("org.cubewhy.qbychat.components")
+//@ComponentScan("org.cubewhy.qbychat.component")
 @EnableWebSecurity
 public class SecurityConfig {
     @Bean

@@ -1,4 +1,4 @@
-package org.cubewhy.qbychat.components;
+package org.cubewhy.qbychat.component;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
@@ -26,9 +26,9 @@ public class JwtTokenProvider {
         Date now = new Date();
         Date expiration = new Date(now.getTime() + jwtExpiration);
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
-                .setExpiration(expiration)
+                .subject(username)
+                .issuedAt(new Date())
+                .expiration(expiration)
                 .signWith(key())
                 .compact();
     }

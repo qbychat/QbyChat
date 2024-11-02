@@ -1,7 +1,7 @@
 package org.cubewhy.qbychat.services.impl;
 
 import jakarta.annotation.Resource;
-import org.cubewhy.qbychat.components.JwtTokenProvider;
+import org.cubewhy.qbychat.component.JwtTokenProvider;
 import org.cubewhy.qbychat.entity.dto.LoginDTO;
 import org.cubewhy.qbychat.services.AuthService;
 import org.springframework.security.authentication.AuthenticationManager;
