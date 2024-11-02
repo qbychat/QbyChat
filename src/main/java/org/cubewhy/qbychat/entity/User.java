@@ -16,7 +16,6 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
@@ -27,6 +26,8 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private String email;
+
+    private String nickname = username;
 
     private Date registerTime = new Date();
     private PrivacyPreference privacyPreference;

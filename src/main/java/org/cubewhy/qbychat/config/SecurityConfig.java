@@ -24,9 +24,9 @@ public class SecurityConfig {
                 .formLogin(conf -> conf
                         .loginProcessingUrl("/api/user/login")
                 )
-                .oauth2Login(conf -> conf
-                        .loginPage("/api/user/oauth2/authorization")
-                )
+//                .oauth2Login(conf -> conf
+//                        .loginPage("/api/user/oauth2/authorization")
+//                )
                 .logout(conf -> conf.logoutSuccessUrl("/").permitAll())
                 .build();
     }

@@ -7,6 +7,8 @@ import java.util.List;
 
 @Data
 public class PrivacyPreference {
+    private Preference bio;
+    private Preference invites;
     private Preference calls;
     private Preference email; // hide/show your primary email in your profile
     private Preference redirectedMessages;
@@ -15,6 +17,7 @@ public class PrivacyPreference {
         EVERYBODY, NOBODY, CONTACTS
     }
 
+    @Data
     public static class Preference {
         private Status defaultPreference = Status.EVERYBODY;
 
